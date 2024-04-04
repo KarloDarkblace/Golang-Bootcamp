@@ -94,19 +94,19 @@ func CountMode(numbers []int) int {
 }
 
 func CountSD(numbers []int) float64 {
-	if len(numbers) == 0 {
+	mas_length := float64(len(numbers))
+	if mas_length == 0 {
 		return 0
 	}
 
 	mean := CountMean(numbers)
 	var sum float64 = 0.0
-	n := float64(len(numbers))
 
 	for _, number := range numbers {
 		sum += math.Pow(float64(number)-mean, 2)
 	}
 
-	sd := math.Sqrt(sum / n)
+	sd := math.Sqrt(sum / mas_length)
 	return sd
 }
 
